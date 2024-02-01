@@ -51,6 +51,13 @@ h2 {
     padding: 20px;
 }
 
+/* Mobile phone viewport adjustment */
+@media (max-width: 768px) {
+    #resources, #faith-content {
+        width: 90%;
+    }
+}
+
 #resources ul, #resources dl {
     list-style-type: none; /* Removes the default list styling */
     padding: 0;
@@ -75,7 +82,7 @@ h2 {
 }
 
 #faith-content ul {
-    list-style-type: disc; /* or another style if you prefer */
+    list-style-type: none; /* or another style if you prefer */
     padding: 0;
     margin: 0;
 }
@@ -116,6 +123,33 @@ h2 {
 footer p {
     padding-top: 10px;
     font-size: 0.75em;
+}
+
+/* Contact Page Styles */
+.contact-page .map-container {
+    position: relative;
+    width: 450px; /* Full width */
+    height: 0; /* Reset height */
+    padding-top: 56.25%; /* Aspect ratio of 16:9 (100%/16*9) */
+    overflow: hidden;
+}
+
+.contact-page .map-container iframe, 
+.contact-page .map-container object, 
+.contact-page .map-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 450px;
+}
+
+.contact-page .h3-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    padding: 20px;
 }
 
 .navbar-brand {
