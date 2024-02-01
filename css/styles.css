@@ -30,12 +30,24 @@ h2 {
 #welcome {
     color: white;
     position: absolute;
-    bottom: 0;
+    width: 40%; /* Set the width of the box */
+    left: 65%; /* Position the left edge of the box in the middle of the screen */
+    top: 50%; /* Start at the middle of the screen vertically */
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px;
     padding-bottom: 60px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3); /* Assuming you want to keep the slight transparency */
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    #welcome {
+        width: 90%; /* Increase width to 90% for smaller screens */
+        left: 50%; /* Ensure it remains centered */
+        /* The transform property does not need to be changed as it already centers the box */
+    }
 }
 
 #resources, #faith-content {
