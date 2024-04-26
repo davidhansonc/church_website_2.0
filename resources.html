@@ -34,11 +34,11 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="container mt-5 pt-5"> <!-- Added container, mt-5, and pt-5 for spacing -->
         <section id="resources">
             <h2>Resources</h2>
-            <div class="h3-container">
-                <div class="h3-section">
+            <div class="row"> <!-- Bootstrap row -->
+                <div class="col-md-6"> <!-- Half width on medium and larger screens -->
                     <h3>Ministry Links</h3>
                     <ul>
                         <li><a href="https://www.lsm.org/" target="_blank">Living Stream Ministry</a></li>
@@ -50,7 +50,7 @@
                         <li><a href="https://www.affcrit.com/" target="_blank">Affirmation & Critique</a></li>
                     </ul>
                 </div>
-                <div class="h3-section">
+                <div class="col-md-6"> <!-- Half width on medium and larger screens -->
                     <h3>Neighboring Churches</h3>
                     <ul>
                         <li><a href="https://www.churchinphoenix.org/" target="_blank">Phoenix, AZ</a></li>
@@ -63,8 +63,10 @@
         </section>
         <!-- Add more sections as needed -->
     </main>
-    <footer>
-        <p>Copyright &copy; 2023. The Church Group. All Rights Reserved.</p>
+    <footer class="bg-light text-center text-lg-start"> <!-- Bootstrap classes for background and text alignment -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Copyright &copy; 2024. The Church in Tucson. All Rights Reserved.
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

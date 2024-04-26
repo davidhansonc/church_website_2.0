@@ -1,18 +1,30 @@
-/* Reset or Global Styles */
+/* Global Styles and Resets */
 html, body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-}
-
-body {
     background-image: url('../images/cactus_photo.jpg');
-    background-size: auto 100%;
+    background-size: cover; /* Changed to cover for better background handling */
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* Layout and Structure */
+/* Typography */
+h2, .navbar-brand {
+    text-align: center;
+    font-size: 2em; /* Consolidated font size for navbar-brand here */
+    margin-bottom: 0px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure navbar is always on top */
+}
+
+/* Main Layout Components */
 footer {
     position: fixed;
     bottom: 0;
@@ -20,129 +32,123 @@ footer {
     text-align: center;
     background-color: white;
     color: black;
+    padding-top: 10px;
+    font-size: 0.75em;
 }
 
-h2 {
-    text-align: center;
+/* Specific Components */
+#welcome, #resources, #faith-content {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Components and Elements */
 #welcome {
     color: white;
-    position: absolute;
-    width: 40%; /* Set the width of the box */
-    left: 65%; /* Position the left edge of the box in the middle of the screen */
-    top: 50%; /* Start at the middle of the screen vertically */
-    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+    width: 40%;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 30px;
     padding-bottom: 60px;
-    background-color: rgba(255, 255, 255, 0.3); /* Assuming you want to keep the slight transparency */
+    background-color: rgba(255, 255, 255, 0.3);
     font-size: 20px;
 }
 
-@media (max-width: 768px) {
-    #welcome {
-        width: 90%; /* Increase width to 90% for smaller screens */
-        left: 50%; /* Ensure it remains centered */
-        /* The transform property does not need to be changed as it already centers the box */
-    }
-}
-
 #resources, #faith-content {
-    position: fixed;
     top: 85px;
     bottom: 60px;
     width: 70%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
     overflow-y: auto;
-    box-sizing: border-box;
-    padding: 20px;
 }
 
-/* Mobile phone viewport adjustment */
-@media (max-width: 768px) {
-    #resources, #faith-content {
-        width: 90%;
-    }
-}
-
-#resources ul, #resources dl {
-    list-style-type: none; /* Removes the default list styling */
-    padding: 0;
-}
-
-#resources li, #resources dt {
-    padding: 5px 0; /* Adds some spacing between list items */
-}
-
-#resources dd {
-    margin-left: 20px; /* Indents the description */
-}
-
-#resources a {
-    color: #6495ED; /* Soft blue */
-    text-decoration: none; /* Optional: Removes the underline from links */
-}
-
-#resources a:hover {
-    color: #4169E1; /* Slightly darker blue on hover for visual feedback */
-    text-decoration: underline; /* Optional: Adds an underline on hover */
-}
-
-#faith-content ul {
-    list-style-type: none; /* or another style if you prefer */
+/* List Styles */
+#resources ul, #resources dl, #faith-content ul {
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-#faith-content ul li {
-    margin-bottom: 15px; /* Adds more space between list items */
+#resources li, #resources dt, #faith-content ul li {
+    padding: 5px 0;
+    margin-bottom: 15px;
 }
 
-.faith-text {
-    width: 80%;
-    margin: 0 auto; /* Centers the block horizontally */
+#resources dd {
+    margin-left: 20px;
 }
 
-.h3-container {
+#resources a, #resources a:hover {
+    color: #6495ED;
+    text-decoration: none;
+}
+
+#resources a:hover {
+    color: #4169E1;
+    text-decoration: underline;
+}
+
+/* Flex Containers */
+.h3-container, .contact-page .h3-container {
     display: flex;
-    justify-content: space-between; /* This will space out the child elements evenly */
-    align-items: flex-start; /* Aligns items at the start of the container */
-    flex-wrap: wrap; /* Allows items to wrap onto the next line if there's not enough space */
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .h3-section {
-    flex: 1; /* Allows each section to grow and take up equal space */
-    padding: 20px; /* Adds some space inside each section */
-    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
-    min-width: 300px; /* Minimum width before wrapping */
-    text-align: left; /* Centers text horizontally */
-    display: flex; /* Enables Flexbox within each .h3-section */
-    flex-direction: column; /* Stacks flex items vertically */
-    justify-content: center; /* Centers flex items vertically within the container */
-    align-items: center; /* Centers flex items horizontally within the container */
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.google-calendar {
-    text-align: center; /* Center the calendar in its container */
-    padding: 20px; /* Add some padding around the calendar */
+/* Media Queries */
+@media (max-width: 768px) {
+    #welcome, #resources, #faith-content {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%); /* Ensure proper horizontal centering */
+    }
+
+    .navbar {
+        font-size: 0.8em; /* Reduce font size in the navbar for better fit */
+    }
+
+    footer {
+        font-size: 0.6em; /* Reduce footer font size for better readability */
+    }
+
+    h2, .navbar-brand {
+        font-size: 1.5em; /* Reduce font size for headings */
+    }
+
+    .h3-container, .contact-page .h3-container {
+        flex-direction: column; /* Stack flex items vertically on small screens */
+    }
 }
 
-footer p {
-    padding-top: 10px;
-    font-size: 0.75em;
+@media (min-aspect-ratio: 2832/1593) {
+    body {
+        background-size: 100% auto;
+    }
 }
 
-/* Contact Page Styles */
+/* Contact Page Specific Styles */
 .contact-page .map-container {
     position: relative;
-    width: 450px; /* Full width */
-    height: 0; /* Reset height */
-    padding-top: 56.25%; /* Aspect ratio of 16:9 (100%/16*9) */
+    width: 100%; /* Make map container responsive */
+    height: 0;
+    padding-top: 56.25%; /* Maintain aspect ratio */
     overflow: hidden;
 }
 
@@ -156,24 +162,10 @@ footer p {
     max-height: 450px;
 }
 
-.contact-page .h3-container {
+.google-calendar {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: start;
-    padding: 20px;
-}
-
-.navbar-brand {
-    font-size: 2em;
-}
-
-/* Utilities and Helpers */
-/* (Add any utility classes here) */
-
-/* Media Queries */
-@media (min-aspect-ratio: 2832/1593) {
-    body {
-        background-size: 100% auto;
-    }
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 110%; /* Ensures the container takes full height of its parent */
+    padding: 20px; /* Optional: Adds some padding around the iframe */
 }
