@@ -112,34 +112,30 @@ footer {
     align-items: center;
 }
 
-/* Media Queries */
+/* Mobile styles */
 @media (max-width: 768px) {
-    #welcome, #resources, #faith-content {
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%); /* Ensure proper horizontal centering */
+    .h3-container {
+        flex-direction: column; /* Stack vertically on small screens */
     }
 
-    .navbar {
-        font-size: 0.8em; /* Reduce font size in the navbar for better fit */
-    }
-
-    footer {
-        font-size: 0.6em; /* Reduce footer font size for better readability */
-    }
-
-    h2, .navbar-brand {
-        font-size: 1.5em; /* Reduce font size for headings */
-    }
-
-    .h3-container, .contact-page .h3-container {
-        flex-direction: column; /* Stack flex items vertically on small screens */
+    .map-container {
+        order: -1; /* Move map above the text on mobile */
     }
 }
 
-@media (min-aspect-ratio: 2832/1593) {
-    body {
-        background-size: 100% auto;
+/* Desktop styles */
+@media (min-width: 769px) {
+    .h3-container {
+        flex-direction: row; /* Side by side on larger screens */
+    }
+
+    .map-container {
+        order: 1; /* Ensure map is after the text on desktop */
+    }
+
+    .h3-section {
+        order: 0; /* Ensure text is before the map on desktop */
+        flex: 1; /* Take up the remaining space */
     }
 }
 
