@@ -117,7 +117,7 @@ footer {
     #welcome {
         left: 50%; /* Center the container */
         width: 80%; /* Adjust width for smaller screens */
-        text-align: center; /* Center the text within the container
+        text-align: center; /* Center the text within the container */
         padding: 10px; /* Adjust padding for smaller screens */
     }
 
@@ -184,4 +184,11 @@ ul {
 
 li {
     margin-bottom: 10px; /* Adds space between list items */
+}
+
+#resources .col-md-6 {
+    text-align: center; /* Centers text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: top; /* Centers content vertically */
 }
