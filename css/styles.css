@@ -9,22 +9,6 @@ html, body {
     background-position: center;
 }
 
-/* Typography */
-h2, .navbar-brand {
-    text-align: center;
-    font-size: 2em; /* Consolidated font size for navbar-brand here */
-    margin-bottom: 0px;
-}
-
-/* Navigation */
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000; /* Ensure navbar is always on top */
-}
-
-/* Main Layout Components */
 footer {
     position: fixed;
     bottom: 0;
@@ -34,6 +18,21 @@ footer {
     color: black;
     padding-top: 10px;
     font-size: 0.75em;
+}
+
+/* Typography */
+h2, h3, .navbar-brand {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure navbar is always on top */
 }
 
 /* Specific Components */
@@ -68,6 +67,15 @@ footer {
 }
 
 /* List Styles */
+ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
 #resources ul, #resources dl, #faith-content ul {
     list-style-type: none;
     padding: 0;
@@ -83,6 +91,7 @@ footer {
     margin-left: 20px;
 }
 
+/* Link Styles */
 #resources a, #resources a:hover {
     color: #6495ED;
     text-decoration: none;
@@ -91,6 +100,13 @@ footer {
 #resources a:hover {
     color: #4169E1;
     text-decoration: underline;
+}
+
+#resources .col-md-6 {
+    text-align: center; /* Centers text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
 }
 
 /* Flex Containers */
@@ -171,24 +187,4 @@ footer {
     align-items: center; /* Centers content vertically */
     height: 110%; /* Ensures the container takes full height of its parent */
     padding: 20px; /* Optional: Adds some padding around the iframe */
-}
-
-h2, h3 {
-    margin-bottom: 15px; /* Adds space below headings */
-}
-
-ul {
-    padding-left: 20px; /* Indents the list */
-    line-height: 1.6; /* Increases line height for better readability */
-}
-
-li {
-    margin-bottom: 10px; /* Adds space between list items */
-}
-
-#resources .col-md-6 {
-    text-align: center; /* Centers text horizontally */
-    display: flex;
-    flex-direction: column;
-    justify-content: top; /* Centers content vertically */
 }
